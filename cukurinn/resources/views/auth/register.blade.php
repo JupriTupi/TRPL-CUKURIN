@@ -62,6 +62,61 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="alamat" class="col-md-4 col-form-label text-md-right">{{ __('Alamat') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="alamat" type="alamat" class="form-control @error('alamat') is-invalid @enderror" name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat">
+
+                                @error('alamat')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="noHp" class="col-md-4 col-form-label text-md-right">{{ __('Nomor Handphone') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="noHp" type="number" class="form-control @error('noHp') is-invalid @enderror" name="noHp" value="{{ old('noHp') }}" required autocomplete="noHp">
+
+                                @error('noHp')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="tentang" class="col-md-4 col-form-label text-md-right">{{ __('Tentang') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="tentang" type="tentang" class="form-control @error('tentang') is-invalid @enderror" name="tentang" value="{{ old('tentang') }}" required autocomplete="tentang">
+
+                                @error('tentang')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                       
+                        <div class="form-group row">
+                            <label for="uname" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="uname" type="uname" class="form-control @error('uname') is-invalid @enderror" name="uname" value="{{ old('uname') }}" required autocomplete="uname">
+
+                                @error('uname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
