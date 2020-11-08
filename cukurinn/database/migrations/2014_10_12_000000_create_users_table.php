@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('tentang')->nullable();
             $table->string('alamat')->nullable();
             $table->string('uname')->nullable();
+            $table->string('layanan')->nullable();
+            $table->enum('status',['aktif','tidakAktif'])->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
