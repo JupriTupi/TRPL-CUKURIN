@@ -59,7 +59,7 @@
         </div>
     </div>
     @section('modal')
-        <!-- Modal Tambah Data Pet Shop-->
+        <!-- Modal Tambah Data Pengguna-->
         <div class="modal fade" tabindex="-1" role="dialog" id="exampleModal">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -69,7 +69,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{ route('store.barber') }}" method="POST">
+                    <form action="{{ route('show.users-management') }}" method="POST">
                         @csrf
                         <div class="modal-body">
                             <div class="row">

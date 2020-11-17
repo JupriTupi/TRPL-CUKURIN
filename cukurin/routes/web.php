@@ -18,7 +18,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/editPassword', 'AdminController@editPassword')->name('edit.password.admin');
     Route::patch('/editPassword', 'AdminController@updatePassword')->name('edit.password.admin');
     Route::get('users-management', 'AdminController@showUsersManagement')->name('show.users-management');
-    Route::post('users-management', 'AdminController@storeDataPetshop')->name('store.barber');
+    Route::post('users-management', 'AdminController@storeDataBarber')->name('store.barber');
     Route::get('users-management/{user}/edit', 'AdminController@editUsersManagement')->name('edit.users-management');
     Route::patch('users-management/{user}', 'AdminController@updateUsersManagement')->name('update.users-management');
     Route::delete('users-management/{user}', 'AdminController@destroyUsersManagement')->name('destroy.users-management');
