@@ -129,11 +129,44 @@
                                             </span>
                                         @enderror
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="tentang" class="d-block">Tentang</label>
+                                        <textarea id="tentang" type="text" class="form-control @error('tentang') is-invalid @enderror" name="tentang">{{ old('tentang') }}</textarea>
+                                            @error('tentang')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="role" class="d-block mb-3">Pilih Role</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="role" id="exampleRadios1" value="2" checked>
+                                            <label class="form-check-label" for="exampleRadios1">
+                                                Barber
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="role" id="exampleRadios2" value="3">
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                Customer
+                                            </label>
+                                        </div>
+                                        <div>
+                                            @error('role')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer bg-whitesmoke br">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>

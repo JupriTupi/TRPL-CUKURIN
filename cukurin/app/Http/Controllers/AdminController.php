@@ -60,6 +60,8 @@ class AdminController extends Controller
             'email' => $request->email,
             'noHp' => $request->noHp,
             'alamat' => $request->alamat,
+            'tentang'=> $request->tentang,
+            'id_role' => $request->role,
         ]);
 
         return redirect()->route('show.users-management')->with('success', 'Data Berhasil Disimpan.');
@@ -81,6 +83,8 @@ class AdminController extends Controller
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'tentang' => ['required'],
+                'role' => ['required']
             ],
             [
                 'name.string' => 'Nama Lengkap Harus berupa huruf',
@@ -96,6 +100,8 @@ class AdminController extends Controller
                 'email.unique' => 'Email sudah digunakan, silakan ganti.',
                 'username.max' => 'Maksimal 25 karakter',
                 'username.alpha_num' => 'Hanya bisa diisi dengan karakter alpha numeric',
+                'tentang.required' => 'Data tidak boleh kosong, harap diisi',
+                'role.required' => 'Data tidak boleh kosong, harap diisi',
             ]
         );
         $user = User::create([
@@ -105,10 +111,12 @@ class AdminController extends Controller
             'alamat' => $request->input('alamat'),
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password')),
+            'tentang'=> $request->input('tentang'),
+            'id_role' => $request->input('role'),
         ]);
-        $user->roles()->attach(Role::where('name', 'barber')->first());
+        // return $user;
 
-        return redirect()->route('shows.users-management')->with('success', 'Barber Berhasil Ditambahkan.');
+        return redirect()->route('show.users-management')->with('success', 'Data Berhasil Ditambahkan.');
     }
 
     public function editPassword()
