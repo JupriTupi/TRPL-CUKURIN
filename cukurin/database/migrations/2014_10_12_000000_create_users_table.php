@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('noHp', 13);
             $table->timestamp('email_verified_at')->nullable();
             $table->text('alamat');
-            $table->text('tentang');
+            $table->text('tentang')->nullable();
             $table->string('password');
             $table->unsignedBigInteger('id_role');
             $table->rememberToken();

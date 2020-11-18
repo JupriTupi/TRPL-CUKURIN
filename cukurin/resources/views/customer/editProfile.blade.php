@@ -51,6 +51,15 @@
                     </div>
                 </div>
                 </div>
+                <div class="row">
+                    <div class="form-group col-12">
+                        <label>Tentang</label>
+                        <textarea name="tentang" class="form-control summernote-simple">{{ $user->tentang }}</textarea>
+                        <div class="invalid-feedback">
+                            Data tidak boleh kosong, harap diisi.
+                        </div>
+                    </div>
+                </div>
                 <a href="{{ route('edit.password') }}" class="text-danger">Ganti Password</a>
             </div>
             <div class="card-footer text-right">

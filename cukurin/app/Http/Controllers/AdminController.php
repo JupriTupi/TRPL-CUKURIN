@@ -61,7 +61,7 @@ class AdminController extends Controller
             'noHp' => $request->noHp,
             'alamat' => $request->alamat,
             'tentang'=> $request->tentang,
-            'id_role' => $request->role,
+            // 'id_role' => $request->role,
         ]);
 
         return redirect()->route('show.users-management')->with('success', 'Data Berhasil Disimpan.');
