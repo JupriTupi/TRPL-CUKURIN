@@ -100,6 +100,7 @@ gtag('config', 'UA-94034622-3');
                                                 </span>
                                             @enderror
                                     </div>
+
                                     <div class="form-group row">
                                         <label for="alamat" class="d-block">Alamat</label>
                                         <textarea id="alamat" type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat">{{ old('alamat') }}</textarea>
@@ -108,6 +109,39 @@ gtag('config', 'UA-94034622-3');
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="tentang" class="d-block">Tentang</label>
+                                        <textarea id="tentang" type="text" class="form-control @error('tentang') is-invalid @enderror" name="tentang">{{ old('tentang') }}</textarea>
+                                            @error('tentang')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="role" class="d-block mb-3">Pilih Role</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="role" id="exampleRadios1" value="2" checked>
+                                            <label class="form-check-label" for="exampleRadios1">
+                                                Barber
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="role" id="exampleRadios2" value="3">
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                Customer
+                                            </label>
+                                        </div>
+                                        <div>
+                                            @error('role')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
                                     </div>
 
                                     <div class="form-group">

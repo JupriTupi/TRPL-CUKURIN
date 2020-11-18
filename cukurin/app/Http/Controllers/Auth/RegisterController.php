@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
-use App\Role;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -45,9 +46,11 @@ class RegisterController extends Controller
                 'username' => ['required', 'alpha_num', 'max:25'],
                 'noHp' => ['required', 'string', 'max:13', 'min:10'],
                 'alamat' => ['required'],
+                'tentang' => ['required'],
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'role' => ['required']
             ],
             [
                 'name.string' => 'Nama Lengkap Harus berupa huruf',
@@ -55,6 +58,7 @@ class RegisterController extends Controller
                 'username.required' => 'Data tidak boleh kosong, harap diisi',
                 'noHp.required' => 'Data tidak boleh kosong, harap diisi',
                 'alamat.required' => 'Data tidak boleh kosong, harap diisi',
+                'tentang.required' => 'Data tidak boleh kosong, harap diisi',
                 'email.required' => 'Data tidak boleh kosong, harap diisi',
                 'password.required' => 'Data tidak boleh kosong, harap diisi',
                 'password.min' => 'Minimal 8 karakter',
@@ -63,6 +67,7 @@ class RegisterController extends Controller
                 'email.unique' => 'Email sudah digunakan, silakan ganti.',
                 'username.max' => 'Maksimal 25 karakter',
                 'username.alpha_num' => 'Hanya bisa diisi dengan karakter alpha numeric',
+                'role.required' => 'Data tidak boleh kosong, harap diisi',
             ]
         );
     }
@@ -80,12 +85,35 @@ class RegisterController extends Controller
             'username' => $data['username'],
             'noHp' => $data['noHp'],
             'alamat' => $data['alamat'],
+            'tentang' => $data['tentang'],
             'email' => $data['email'],
+            'id_role' => $data['role'],
             'password' => Hash::make($data['password']),
         ]);
 
-        $user->roles()->attach(Role::where('name', 'customer')->first());
-
         return $user;
+    }
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        if ($response = $this->registered($request, $user)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+            ? new JsonResponse([], 201)
+            : redirect($this->redirectPath());
+    }
+
+    public function redirectPath()
+    {
+        if (method_exists($this, 'redirectTo')) {
+            return $this->redirectTo();
+        }
+
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/login';
     }
 }
