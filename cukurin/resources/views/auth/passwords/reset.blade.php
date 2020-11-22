@@ -32,7 +32,7 @@ gtag('config', 'UA-94034622-3');
                 <div class="row">
                     <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
                         <div class="login-brand">
-                            <img src="{{ asset('../assets/img/CP-Logo.png') }}" alt="logo" width="100" class="shadow-light rounded-circle">
+                            CUKURIN
                         </div>
 
                         <div class="card card-primary">
