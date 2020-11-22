@@ -42,7 +42,7 @@ gtag('config', 'UA-94034622-3');
                             <div class="card-body">
                                 <form method="POST" action="{{ route('register') }}">
                                     @csrf
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                         <label for="name">Nama Lengkap</label>
                                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autofocus>
                                             @error('name')
@@ -52,7 +52,7 @@ gtag('config', 'UA-94034622-3');
                                             @enderror
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                             <label for="username">Username</label>
                                             <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" name="username">
                                             @error('username')
@@ -62,7 +62,7 @@ gtag('config', 'UA-94034622-3');
                                             @enderror
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                         <label for="email">Email</label>
                                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}">
                                         @error('email')
@@ -72,7 +72,7 @@ gtag('config', 'UA-94034622-3');
                                         @enderror
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                         <label for="password" class="d-block">Password</label>
                                         <input id="password" type="password" class="form-control pwstrength @error('password') is-invalid @enderror" data-indicator="pwindicator" name="password">
                                         @error('password')
@@ -86,12 +86,12 @@ gtag('config', 'UA-94034622-3');
                                         </div>
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                         <label for="password-confirm" class="d-block">Konfirmasi Password</label>
                                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                         <label for="noHp" class="d-block">Nomor HP</label>
                                         <input id="noHp" type="text" class="form-control @error('noHp') is-invalid @enderror" name="noHp" value="{{ old('noHp') }}">
                                             @error('noHp')
@@ -101,7 +101,7 @@ gtag('config', 'UA-94034622-3');
                                             @enderror
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                         <label for="alamat" class="d-block">Alamat</label>
                                         <textarea id="alamat" type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat">{{ old('alamat') }}</textarea>
                                             @error('alamat')
@@ -111,7 +111,7 @@ gtag('config', 'UA-94034622-3');
                                             @enderror
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                         <label for="tentang" class="d-block">Tentang</label>
                                         <textarea id="tentang" type="text" class="form-control @error('tentang') is-invalid @enderror" name="tentang">{{ old('tentang') }}</textarea>
                                             @error('tentang')
@@ -121,7 +121,7 @@ gtag('config', 'UA-94034622-3');
                                             @enderror
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                         <label for="role" class="d-block mb-3">Pilih Role</label>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="role" id="exampleRadios1" value="2" checked>
@@ -146,8 +146,12 @@ gtag('config', 'UA-94034622-3');
 
                                     <div class="form-group">
                                     <button type="submit" class="btn btn-info btn-lg btn-block">
-                                        Daftar
+                                        Register
                                     </button>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <a href="{{ route('login') }}" class="btn btn-danger btn-lg btn-block">Batal</a>
                                     </div>
                                 </form>
                             </div>
