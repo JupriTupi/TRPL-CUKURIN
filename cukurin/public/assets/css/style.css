@@ -631,7 +631,7 @@ select.form-control:not([size]):not([multiple]) {
     line-height: 30px;
     -ms-grid-row-align: center;
     align-self: center;
-    /* width: 100%; */
+    width: 100%;
     min-height: 70px;
     padding: 15px 25px;
     display: flex;
@@ -654,7 +654,7 @@ select.form-control:not([size]):not([multiple]) {
       line-height: 28px;
       padding-right: 10px;
       margin-bottom: 0;
-      text-align: center; }
+       }
       .card .card-header h4 + .card-header-action,
       .card .card-header h4 + .card-header-form {
         margin-left: auto; }
