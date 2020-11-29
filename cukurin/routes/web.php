@@ -31,6 +31,12 @@ Route::prefix('barber')->middleware('auth')->group(function () {
     Route::patch('/editProfile', 'BarberController@updateProfile')->name('edit.profile.barber');
     Route::get('/editPassword', 'BarberController@editPassword')->name('edit.password.barber');
     Route::patch('/editPassword', 'BarberController@updatePassword')->name('edit.password.barber');
+    // Data Layanan
+    Route::get('DataLayanan', 'DataLayananController@showDataLayanan')->name('show.DataLayanan');
+    Route::post('DataLayanan', 'DataLayananController@storeDataLayanan')->name('store.DataLayanan');
+    Route::get('DataLayanan/{user}/edit', 'DataLayananController@editDataLayanan')->name('edit.DataLayanan');
+    Route::patch('DataLayanan/{user}', 'DataLayananController@updateDataLayanan')->name('update.DataLayanan');
+    Route::delete('DataLayanan/{user}', 'DataLayananController@destroyDataLayanan')->name('destroy.DataLayanan');
 });
 
 Route::prefix('customer')->middleware('auth')->group(function () {

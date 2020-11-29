@@ -279,10 +279,16 @@ gtag('config', 'UA-94034622-3');
                 <a href="#" class="nav-link"><i class="far fa-heart"></i><span>Top Navigation</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                <a href="#" data-toggle="dropdown" class="nav-link has-dropdown"><i class="far fa-clone"></i><span>Multiple Dropdown</span></a>
+                <a href="#" data-toggle="dropdown" class="nav-link has-dropdown"><i class="far fa-clone"></i><span>Layanan</span></a>
                 <ul class="dropdown-menu">
-                    <li class="nav-item"><a href="#" class="nav-link">Not Dropdown Link</a></li>
-                    <li class="nav-item dropdown"><a href="#" class="nav-link has-dropdown">Hover Me</a>
+                    <li class="nav-item"><a href="#" class="nav-link">Potong Rambut</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Rebonding</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Smoothing</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Cat Rambut</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Creambath</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Bleaching+Cat Rambut</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Spa Rambut</a></li>
+                    <!-- <li class="nav-item dropdown"><a href="#" class="nav-link has-dropdown">Jenis Layanan</a>
                     <ul class="dropdown-menu">
                         <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
                         <li class="nav-item dropdown"><a href="#" class="nav-link has-dropdown">Link 2</a>
@@ -292,7 +298,7 @@ gtag('config', 'UA-94034622-3');
                             <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
                         </ul>
                         </li>
-                        <li class="nav-item"><a href="#" class="nav-link">Link 3</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Link 3</a></li> -->
                     </ul>
                     </li>
                 </ul>
