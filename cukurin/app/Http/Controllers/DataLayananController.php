@@ -19,7 +19,7 @@ class DataLayananController extends Controller
     public function index()
     {
         $datalayanan = DataLayanan::all();
-        return view('barber.dataLayanan', compact('data'));
+        return view('barber.dataLayanan');
     }
 
     /**

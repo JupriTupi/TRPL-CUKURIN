@@ -23,6 +23,12 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('users-management/{user}/edit', 'AdminController@editUsersManagement')->name('edit.users-management');
     Route::patch('users-management/{user}', 'AdminController@updateUsersManagement')->name('update.users-management');
     Route::delete('users-management/{user}', 'AdminController@destroyUsersManagement')->name('destroy.users-management');
+    // Data Voucher
+    Route::get('DataVoucher', 'DataVoucherController@show')->name('show.DataVoucher');
+    Route::post('DataVoucher', 'DataVoucherController@store')->name('store.DataVoucher');
+    Route::get('DataVoucher/{datavoucher}/edit', 'DataVoucherController@edit')->name('edit.DataVoucher');
+    Route::patch('DataVoucher/{datavoucher}', 'DataVoucherController@update')->name('update.DataVoucher');
+    Route::delete('DataVoucher/{datavoucher}', 'DataVoucherController@destroy')->name('destroy.DataVoucher');
 });
 
 Route::prefix('barber')->middleware('auth')->group(function () {

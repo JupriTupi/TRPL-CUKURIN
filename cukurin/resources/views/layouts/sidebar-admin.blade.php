@@ -19,6 +19,8 @@
             active @endif"><a class="nav-link" href="/admin"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
             <li class="@if (Request::segment(1) == 'admin' && Request::segment(2) == 'users-management')
             active @endif"><a class="nav-link" href="{{ route('show.users-management') }}"><i class="far fa-user"></i> <span>User Management</span></a></li>
+            <li class="@if (Request::segment(1) == 'admin' && Request::segment(2) == 'DataVoucher')
+            active @endif"><a class="nav-link" href="{{ route('show.DataVoucher') }}"><i class="far fa-file-alt"></i> <span>Data Voucher</span></a></li>
             <li class="menu-header">Pages</li>
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Auth</span></a>
