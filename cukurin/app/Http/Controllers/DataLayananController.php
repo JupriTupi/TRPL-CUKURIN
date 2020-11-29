@@ -7,8 +7,7 @@ use App\DataLayanan;
 use Auth;
 use Session;
 use Hash;
-// use App\Role;
-// use App\User;
+
 
 class DataLayananController extends Controller
 {
@@ -45,7 +44,7 @@ class DataLayananController extends Controller
             [
                 'namalayanan' => ['required', 'string', 'max:255'],
                 'harga' => ['required', 'numeric', 'max:100000', 'min:20000'],
-                'deskripsi' => ['required'],
+                'deskripsi' => ['required','string'],
             ],
             [
                 'namalayanan.string' => 'Nama Lengkap Harus berupa huruf',
@@ -53,6 +52,7 @@ class DataLayananController extends Controller
                 'harga.numeric' => 'Harga Harus Berupa Angka',
                 'harga.required' => 'Data tidak boleh kosong, harap diisi',
                 'deskripsi.required' => 'Data tidak boleh kosong, harap diisi',
+                'deskripsi.string' => 'Deskripsi Harus Berupa Huruf'
             ]
         );
         $datalayanan = DataLayanan::create([
@@ -86,9 +86,7 @@ class DataLayananController extends Controller
      */
     public function editDataLayanan(DataLayanan $datalayanan)
     {
-        return view('barber.editLayanan', [
-            'layanan' => DataLayanan::all(),
-        ]);
+        return view('barber.editLayanan', compact('datalayanan'));
     }
 
     /**
@@ -100,7 +98,7 @@ class DataLayananController extends Controller
      */
     public function updateDataLayanan(Request $request, $id)
     {
-        $this->_userValidation($request);
+        $this->_layananValidation($request);
         DataLayanan::where('id', $id)->update([
             'namalayanan' => $request->namalayanan,
             'harga' => $request->harga,
@@ -120,5 +118,21 @@ class DataLayananController extends Controller
     {
         DataLayanan::destroy($id);
         return redirect()->back();
+    }
+    private function _layananValidation(Request $request)
+    {
+        $validation = $request->validate([
+            'namalayanan' => ['required', 'string', 'max:255'],
+            'harga' => ['required', 'numeric', 'max:100000', 'min:20000'],
+            'deskripsi' => ['required','string'],
+        ],
+        [
+            'namalayanan.string' => 'Nama Lengkap Harus berupa huruf',
+            'namalayanan.required' => 'Data tidak boleh kosong, harap diisi',
+            'harga.numeric' => 'Harga Harus Berupa Angka',
+            'harga.required' => 'Data tidak boleh kosong, harap diisi',
+            'deskripsi.required' => 'Data tidak boleh kosong, harap diisi',
+            'deskripsi.string' => 'Deskripsi Harus Berupa Huruf'
+        ]);
     }
 }

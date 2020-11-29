@@ -34,9 +34,9 @@ Route::prefix('barber')->middleware('auth')->group(function () {
     // Data Layanan
     Route::get('DataLayanan', 'DataLayananController@showDataLayanan')->name('show.DataLayanan');
     Route::post('DataLayanan', 'DataLayananController@storeDataLayanan')->name('store.DataLayanan');
-    Route::get('DataLayanan/{user}/edit', 'DataLayananController@editDataLayanan')->name('edit.DataLayanan');
-    Route::patch('DataLayanan/{user}', 'DataLayananController@updateDataLayanan')->name('update.DataLayanan');
-    Route::delete('DataLayanan/{user}', 'DataLayananController@destroyDataLayanan')->name('destroy.DataLayanan');
+    Route::get('DataLayanan/{datalayanan}/edit', 'DataLayananController@editDataLayanan')->name('edit.DataLayanan');
+    Route::patch('DataLayanan/{datalayanan}', 'DataLayananController@updateDataLayanan')->name('update.DataLayanan');
+    Route::delete('DataLayanan/{datalayanan}', 'DataLayananController@destroyDataLayanan')->name('destroy.DataLayanan');
 });
 
 Route::prefix('customer')->middleware('auth')->group(function () {

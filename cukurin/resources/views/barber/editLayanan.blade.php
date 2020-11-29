@@ -3,22 +3,22 @@
 @section('header', 'Edit Layanan')
 @section('content')
     <div class="card">
-        <form method="post" action="{{ route('update.DataLayanan', $user) }}" class="needs-validation" novalidate="">
+        <form method="post" action="{{ route('update.DataLayanan', $datalayanan) }}" class="needs-validation" novalidate="">
             @csrf
             @method('PATCH')
-            <input type="hidden" name="id" value="{{ $user->id }}">
+            <input type="hidden" name="id" value="{{ $datalayanan->id }}">
             <div class="card-body">
                 <div class="row">                               
                     <div class="form-group col-md-6 col-12">
                         <label>Nama Layanan</label>
-                        <input type="text" class="form-control" name="namalayanan" value="{{ $user->namalayanan }}" required="">
+                        <input type="text" class="form-control" name="namalayanan" value="{{ $datalayanan->namalayanan }}" required="">
                         <div class="invalid-feedback">
                             Data tidak boleh kosong, harap diisi.
                         </div>
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label>Harga</label>
-                        <input type="text" class="form-control" name="harga" value="{{ $user->harga }}" required="">
+                        <input type="text" class="form-control" name="harga" value="{{ $datalayanan->harga }}" required="">
                         <div class="invalid-feedback">
                             Data tidak boleh kosong, harap diisi.
                         </div>
@@ -27,14 +27,14 @@
                 <div class="row">
                 <div class="form-group col-md-6 col-12">
                     <label>Deskripsi</label>
-                    <input type="email" class="form-control" name="deskripsi" value="{{ $user->deskripsi }}" required="">
+                    <input type="text" class="form-control" name="deskripsi" value="{{ $datalayanan->deskripsi }}" required="">
                     <div class="invalid-feedback">
                         Data tidak boleh kosong, harap diisi.
                     </div>
                 </div>
                 <!-- <div class="form-group col-md-6 col-12">
                     <label>Phone</label>
-                    <input type="tel" class="form-control" name="noHp" value="{{ $user->noHp }}">
+                    <input type="tel" class="form-control" name="noHp" value="{{ $datalayanan->noHp }}">
                     <div class="invalid-feedback">
                         Data tidak boleh kosong, harap diisi.
                     </div>
@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="form-group col-12">
                         <label>Alamat</label>
-                        <textarea name="alamat" class="form-control summernote-simple">{{ $user->alamat }}</textarea>
+                        <textarea name="alamat" class="form-control summernote-simple">{{ $datalayanan->alamat }}</textarea>
                         <div class="invalid-feedback">
                             Data tidak boleh kosong, harap diisi.
                         </div>
@@ -52,7 +52,7 @@
                 <div class="row">
                     <div class="form-group col-12">
                         <label>Tentang</label>
-                        <textarea name="tentang" class="form-control summernote-simple">{{ $user->tentang }}</textarea>
+                        <textarea name="tentang" class="form-control summernote-simple">{{ $datalayanan->tentang }}</textarea>
                         <div class="invalid-feedback">
                             Data tidak boleh kosong, harap diisi.
                         </div>
