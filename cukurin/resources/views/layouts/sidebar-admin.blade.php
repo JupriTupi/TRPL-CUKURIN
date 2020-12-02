@@ -8,20 +8,13 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li class="dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
-                    <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
-                </ul>
-            </li>
-            <li class="@if (Request::fullUrl() == 'http://127.0.0.1:8000/admin')
-            active @endif"><a class="nav-link" href="/admin"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
-            <li class="@if (Request::segment(1) == 'admin' && Request::segment(2) == 'users-management')
-            active @endif"><a class="nav-link" href="{{ route('show.users-management') }}"><i class="far fa-user"></i> <span>User Management</span></a></li>
-            <li class="@if (Request::segment(1) == 'admin' && Request::segment(2) == 'DataVoucher')
-            active @endif"><a class="nav-link" href="{{ route('show.DataVoucher') }}"><i class="far fa-file-alt"></i> <span>Data Voucher</span></a></li>
-            <li class="menu-header">Pages</li>
+                <li class="{{ Request::routeIs('admin.index') ? 'active' : '' }}"><a href="{{ route('barber.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a></li>
+            <li class="menu-header">Starter</li>
+                <li class="@if (Request::segment(1) == 'admin' && Request::segment(2) == 'users-management')
+                active @endif"><a class="nav-link" href="{{ route('show.users-management') }}"><i class="far fa-user"></i> <span>User Management</span></a></li>
+                <li class="@if (Request::segment(1) == 'admin' && Request::segment(2) == 'DataVoucher')
+                active @endif"><a class="nav-link" href="{{ route('show.DataVoucher') }}"><i class="far fa-file-alt"></i> <span>Data Voucher</span></a></li>
+            <!-- <li class="menu-header">Pages</li>
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Auth</span></a>
                 <ul class="dropdown-menu">
@@ -59,7 +52,7 @@
                     <li><a class="nav-link" href="utilities-invoice.html">Invoice</a></li>
                     <li><a href="utilities-subscribe.html">Subscribe</a></li>
                 </ul>
-            </li>
+            </li> -->
         </ul>      
     </aside>
 </div>

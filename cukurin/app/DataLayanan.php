@@ -14,7 +14,7 @@ class DataLayanan extends Model
       if(!$this->fotolayanan){
         return asset('/images/barber.jpg');
       }
-      return asset('images/'.$this->foto_paket);
+      return asset('images/'.$this->fotolayanan);
     }
   
     public function getharga()
@@ -30,5 +30,13 @@ class DataLayanan extends Model
     // public function hasRole($role)
     // {
     //     return $this->roles()->where('name', $role)->count() == 1;
+    // }
+    public function User()
+    {
+        return $this->hasOne(User::class);
+    }
+    // public function User()
+    // {
+    //     return $this->belongsTo(User::class, 'user_id');
     // }
 }

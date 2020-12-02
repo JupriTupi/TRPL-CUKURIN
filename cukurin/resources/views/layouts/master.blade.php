@@ -228,19 +228,19 @@ gtag('config', 'UA-94034622-3');
                 <img alt="image" src="{{ asset('../assets/img/avatar/avatar-1.png') }}" class="rounded-circle mr-1">
                 <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div></a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <div class="dropdown-title">Logged in 5 min ago</div>
+                    <!-- <div class="dropdown-title">Logged in 5 min ago</div> -->
                     <a href="@if (Request::segment(1) == 'barber')
                                 {{ route('edit.profile.barber') }}
                             @else
                             {{ route('edit.profile.admin') }} @endif" class="dropdown-item has-icon">
                         <i class="far fa-user"></i> Profile
                     </a>
-                    <a href="features-activities.html" class="dropdown-item has-icon">
+                    <!-- <a href="features-activities.html" class="dropdown-item has-icon">
                         <i class="fas fa-bolt"></i> Activities
                     </a>
                     <a href="features-settings.html" class="dropdown-item has-icon">
                         <i class="fas fa-cog"></i> Settings
-                    </a>
+                    </a> -->
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item has-icon text-danger" href="{{ route('logout') }}"
                         onclick="event.preventDefault();

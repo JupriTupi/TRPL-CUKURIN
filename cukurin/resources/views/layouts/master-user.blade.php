@@ -37,11 +37,11 @@ gtag('config', 'UA-94034622-3');
                 <a class="sidebar-gone-show nav-collapse-toggle nav-link" href="#">
                     <i class="fas fa-ellipsis-v"></i>
                 </a>
-                <ul class="navbar-nav">
+                <!-- <ul class="navbar-nav">
                     <li class="nav-item active"><a href="#" class="nav-link">Application</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Report Something</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Server Status</a></li>
-                </ul>
+                </ul> -->
             </div>
             <form class="form-inline ml-auto">
                 {{-- <ul class="navbar-nav">
@@ -240,7 +240,7 @@ gtag('config', 'UA-94034622-3');
                     <img alt="image" src="{{ asset('../assets/img/avatar/avatar-1.png') }}" class="rounded-circle mr-1">
                     <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div></a>
                     <div class="dropdown-menu dropdown-menu-right">
-                    <div class="dropdown-title">Logged in 5 min ago</div>
+                    {{--<div class="dropdown-title">Logged in 5 min ago</div>--}}
                     <a href="/customer/editProfile" class="dropdown-item has-icon">
                         <i class="far fa-user"></i> Profile
                     </a>
@@ -268,20 +268,20 @@ gtag('config', 'UA-94034622-3');
         <nav class="navbar navbar-secondary navbar-expand-lg">
             <div class="container">
             <ul class="navbar-nav">
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                 <a href="#" data-toggle="dropdown" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 <ul class="dropdown-menu">
                     <li class="nav-item"><a href="index-0.html" class="nav-link">General Dashboard</a></li>
                     <li class="nav-item"><a href="index.html" class="nav-link">Ecommerce Dashboard</a></li>
                 </ul>
-                </li>
-                <li class="nav-item active">
-                <a href="#" class="nav-link"><i class="far fa-heart"></i><span>Top Navigation</span></a>
+                </li> -->
+                <li class="nav-item" class="{{ Request::routeIs('admin.index') ? 'active' : '' }}">
+                <a href="{{ route('barber.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dasboard</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                <a href="#" data-toggle="dropdown" class="nav-link has-dropdown"><i class="far fa-clone"></i><span>Layanan</span></a>
+                <a href="{{url('/DataLayananCustomer')}}" data-toggle="dropdown" class="nav-link has-dropdown"><i class="far fa-clone"></i><span>Layanan</span></a>
                 <ul class="dropdown-menu">
-                    <li class="nav-item"><a href="#" class="nav-link">Potong Rambut</a></li>
+                    <li class="nav-item"><a href="{{ route('show.DataLayananCustomer') }}" class="nav-link">Potong Rambut</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Rebonding</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Smoothing</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Cat Rambut</a></li>

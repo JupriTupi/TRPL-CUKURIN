@@ -135,4 +135,9 @@ class DataLayananController extends Controller
             'deskripsi.string' => 'Deskripsi Harus Berupa Huruf'
         ]);
     }
+    public function datalayanan_customer (){
+        $datalayanan = \App\DataLayanan::all();
+        // return $datalayanan;
+        return view('customer.dataLayanan', compact('datalayanan'));
+      }
 }
