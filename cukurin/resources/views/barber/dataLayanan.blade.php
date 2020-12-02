@@ -29,6 +29,7 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Foto Layanan</th>
                     <th scope="col">Nama Layanan</th>
                     <th scope="col">Harga</th>
                     <th scope="col">Deskripsi</th>
@@ -39,6 +40,7 @@
                 @foreach ($layanan as $no => $datalayanan)
                     <tr>
                         <th scope="row">{{ $no+1 }}</th>
+                        <td><img src="{{$datalayanan->getphoto()}}" alt="" style='width: 60px;'></td>
                         <td>{{ $datalayanan->namalayanan }}</td>
                         <td>{{ $datalayanan->harga }}</td>
                         <td>{{ $datalayanan->deskripsi}}</td>
@@ -69,11 +71,22 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{ route('show.DataLayanan') }}" method="POST">
+                    <form action="{{ route('show.DataLayanan') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>
+                                            Foto Layanan
+                                        </label>
+                                        <input type="file" name="fotolayanan" value="{{ old('fotolayanan') }}" class="form-control @error('fotolayanan') is-invalid @enderror" autocomplete="off">
+                                        @error('fotolayanan')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                     <div class="form-group">
                                         <label>
                                             Nama Layanan

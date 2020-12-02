@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class DataLayanan extends Model
 {
     protected $table = 'layanan';
-    protected $fillable= ['fotolayanan', 'namalayanan', 'deskripsi', 'harga'];
+    protected $fillable= ['fotolayanan', 'namalayanan', 'deskripsi', 'harga','pembuat'];
   
     public function getPhoto(){
       if(!$this->fotolayanan){
@@ -35,8 +35,8 @@ class DataLayanan extends Model
     {
         return $this->hasOne(User::class);
     }
-    // public function User()
-    // {
-    //     return $this->belongsTo(User::class, 'user_id');
-    // }
+    public function Users()
+    {
+        return $this->belongsTo(User::class, 'pembuat');
+    }
 }

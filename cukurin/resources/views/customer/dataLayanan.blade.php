@@ -3,26 +3,29 @@
 @section('content')
 <section class="padding ptb-xs-40">
     <div class="row">
-      <!-- @if (isset($datalayanan) && count($datalayanan) > 0) -->
+      @if (isset($datalayanan) && count($datalayanan) > 0)
       @foreach($datalayanan as $ly)
-      <div class="col-md-6 col-lg-4 mb-30" style="padding:30px;">
-        <div class="service_box" style="border: 1px solid #dedede;text-align:center;">
-          <!-- <figure>
-            <a href="#"><img src="{{$ly->getPhoto()}}" alt="" /></a>
-          </figure> -->
+      <div class="col-12 col-md-4 col-lg-4" style="padding:30px;">
+        <article class="article article-style-c" style="csolid #dedede;text-align:center;">
+          <div class="article-header">
+              <div class="article-image" data-background="{{$ly->getphoto()}}">
+              </div>
+          </div>
           <div class="product-details">
-            <h3 class="text-center"><a href="#">{{$ly->namalayanan}}</a></h3>
+            <h3 class="text-center">{{$ly->namalayanan}}</a></h3>
             <h4 class="text-color text-center">Rp {{$ly->harga}}</h4>
+            <h4 class="text-color text-center">Tempat : {{$ly->users->name}}</h4>
             <p>
               {{$ly->deskripsi}}
             </p>
             <div class="add-to-cart mb-20" >
-              <a href="{{url('/paketpekerjaan/order/'.$ly->id)}}" style="border: 3px solid #6e8900;"><i class="fa fa-shopping-cart"></i>&nbsp;Order Layanan</a>
+              <a href="{{url('/paketpekerjaan/order/'.$ly->id)}}" style=""><i class="fa fa-shopping-cart"></i>&nbsp;Order Layanan</a>
             </div>
           </div>
-        </div>
+        </article>
       </div>
       @endforeach
+      
          @else
          <div class="col-md-6 col-lg-12 mb-30 text-center">
           <tr class="text-center">

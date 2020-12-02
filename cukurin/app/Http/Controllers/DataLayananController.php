@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\DataLayanan;
+use App\User;
 use Auth;
 use Session;
 use Hash;
+use DB;
 
 
 class DataLayananController extends Controller
@@ -39,7 +41,7 @@ class DataLayananController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function storeDataLayanan(Request $request)
-    {
+    {   $user = \Auth::user()->id;
         request()->validate(
             [
                 'namalayanan' => ['required', 'string', 'max:255'],
@@ -56,9 +58,11 @@ class DataLayananController extends Controller
             ]
         );
         $datalayanan = DataLayanan::create([
+            'fotolayanan'=>$request->input('fotolayanan'),
             'namalayanan' => $request->input('namalayanan'),
             'harga' => $request->input('harga'),
             'deskripsi' => $request->input('deskripsi'),
+            'pembuat' => $user,
         ]);
         // return $user;
 
@@ -100,6 +104,7 @@ class DataLayananController extends Controller
     {
         $this->_layananValidation($request);
         DataLayanan::where('id', $id)->update([
+            'fotolayanan'=> $request->fotolayanan,
             'namalayanan' => $request->namalayanan,
             'harga' => $request->harga,
             'deskripsi' => $request->deskripsi,
@@ -137,7 +142,11 @@ class DataLayananController extends Controller
     }
     public function datalayanan_customer (){
         $datalayanan = \App\DataLayanan::all();
+        $user = \App\User::where('id_role','=',2)->first();
+        // $datalayanan= DB::table('layanan as ly')
+        // ->join('users as us', 'us.id', '=', 'ly.pembuat')
+        // ->select(DB::raw('ly.id as id,ly.namalayanan as namalayanan,ly.fotolayanan as fotolayanan,ly.harga as harga,ly.deskripsi as deskripsi,us.name as pembuat'))->get();
         // return $datalayanan;
-        return view('customer.dataLayanan', compact('datalayanan'));
+        return view('customer.dataLayanan', compact('datalayanan','user'));
       }
 }

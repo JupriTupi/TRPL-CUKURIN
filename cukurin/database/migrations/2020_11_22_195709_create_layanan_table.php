@@ -20,6 +20,8 @@ class CreateLayananTable extends Migration
             $table->string('namalayanan');
             $table->biginteger('harga');
             $table->string('deskripsi');
+            $table->bigint('pembuat');
+
             $table->timestamps();
         });
     }
