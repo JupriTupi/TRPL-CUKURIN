@@ -52,4 +52,5 @@ Route::prefix('customer')->middleware('auth')->group(function () {
     Route::get('/editPassword', 'CustomerController@editPassword')->name('edit.password');
     Route::patch('/editPassword', 'CustomerController@updatePassword')->name('edit.password');
     Route::get('/DataLayananCustomer', 'DataLayananController@datalayanan_customer')->name('show.DataLayananCustomer');
+    Route::get('/DataVoucherCustomer', 'DataVoucherController@datavoucher_customer')->name('show.DataVoucherCustomer');
 });

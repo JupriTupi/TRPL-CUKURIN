@@ -12,9 +12,9 @@ class DataLayanan extends Model
   
     public function getPhoto(){
       if(!$this->fotolayanan){
-        return asset('/images/barber.jpg');
+        return('/images/barber.jpg');
       }
-      return asset('images/'.$this->fotolayanan);
+      return('images/'.$this->fotolayanan);
     }
   
     public function getharga()

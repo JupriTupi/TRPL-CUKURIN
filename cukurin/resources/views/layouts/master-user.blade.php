@@ -276,18 +276,25 @@ gtag('config', 'UA-94034622-3');
                 </ul>
                 </li> -->
                 <li class="nav-item" class="{{ Request::routeIs('admin.index') ? 'active' : '' }}">
-                <a href="{{ route('barber.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dasboard</span></a>
+                    <a href="{{ route('barber.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dasboard</span></a>
                 </li>
-                <li class="nav-item dropdown">
-                <a href="{{url('/DataLayananCustomer')}}" data-toggle="dropdown" class="nav-link has-dropdown"><i class="far fa-clone"></i><span>Layanan</span></a>
-                <ul class="dropdown-menu">
+                <li class="nav-item">
+                    <a href="{{route('show.DataLayananCustomer')}}" class="nav-link"><i class="far fa-clone"></i><span>Layanan</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('show.DataVoucherCustomer')}}" class="nav-link"><i class="far fa-clone"></i><span>Voucher</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="far fa-clone"></i><span>Barbershop dan Salon</span></a>
+                </li>
+                <!-- <ul class="dropdown-menu">
                     <li class="nav-item"><a href="{{ route('show.DataLayananCustomer') }}" class="nav-link">Potong Rambut</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Rebonding</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Smoothing</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Cat Rambut</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Creambath</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Bleaching+Cat Rambut</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Spa Rambut</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Spa Rambut</a></li> -->
                     <!-- <li class="nav-item dropdown"><a href="#" class="nav-link has-dropdown">Jenis Layanan</a>
                     <ul class="dropdown-menu">
                         <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
@@ -299,10 +306,10 @@ gtag('config', 'UA-94034622-3');
                         </ul>
                         </li>
                         <li class="nav-item"><a href="#" class="nav-link">Link 3</a></li> -->
-                    </ul>
-                    </li>
-                </ul>
-                </li>
+                    <!-- </ul>
+                    </li> -->
+                <!-- </ul> -->
+                <!-- </li> -->
             </ul>
             </div>
         </nav>

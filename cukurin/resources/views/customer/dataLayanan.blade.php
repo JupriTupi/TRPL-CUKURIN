@@ -8,18 +8,18 @@
       <div class="col-12 col-md-4 col-lg-4" style="padding:30px;">
         <article class="article article-style-c" style="csolid #dedede;text-align:center;">
           <div class="article-header">
-              <div class="article-image" data-background="{{$ly->getphoto()}}">
+              <div class="article-image" data-background="{{$ly->getPhoto()}}">
               </div>
           </div>
           <div class="product-details">
             <h3 class="text-center">{{$ly->namalayanan}}</a></h3>
-            <h4 class="text-color text-center">Rp {{$ly->harga}}</h4>
-            <h4 class="text-color text-center">Tempat : {{$ly->users->name}}</h4>
+            <h5 class="text-center">Rp {{$ly->harga}}</h5>
+            <h6 class="text-center">Tempat : {{$ly->users->name}}</h6>
             <p>
               {{$ly->deskripsi}}
             </p>
             <div class="add-to-cart mb-20" >
-              <a href="{{url('/paketpekerjaan/order/'.$ly->id)}}" style=""><i class="fa fa-shopping-cart"></i>&nbsp;Order Layanan</a>
+              <a href="{{url(''.$ly->id)}}" style=""><i class="fa fa-shopping-cart"></i>&nbsp;Order Layanan</a>
             </div>
           </div>
         </article>
