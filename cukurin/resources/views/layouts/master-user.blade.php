@@ -244,10 +244,10 @@ gtag('config', 'UA-94034622-3');
                     <a href="/customer/editProfile" class="dropdown-item has-icon">
                         <i class="far fa-user"></i> Profile
                     </a>
-                    {{-- <a href="features-activities.html" class="dropdown-item has-icon">
-                        <i class="fas fa-bolt"></i> Activities
+                    <a href="features-activities.html" class="dropdown-item has-icon">
+                        <i class="far fa-envelope"></i> Pesanan
                     </a>
-                    <a href="features-settings.html" class="dropdown-item has-icon">
+                    {{-- <a href="features-settings.html" class="dropdown-item has-icon">
                         <i class="fas fa-cog"></i> Settings
                     </a> --}}
                     <div class="dropdown-divider"></div>

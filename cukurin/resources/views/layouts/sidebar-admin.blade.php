@@ -11,7 +11,7 @@
                 <li class="{{ Request::routeIs('admin.index') ? 'active' : '' }}"><a href="{{ route('barber.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a></li>
             <li class="menu-header">Starter</li>
                 <li class="@if (Request::segment(1) == 'admin' && Request::segment(2) == 'users-management')
-                active @endif"><a class="nav-link" href="{{ route('show.users-management') }}"><i class="far fa-user"></i> <span>User Management</span></a></li>
+                active @endif"><a class="nav-link" href="{{ route('show.users-management') }}"><i class="far fa-user"></i> <span>Data User</span></a></li>
                 <li class="@if (Request::segment(1) == 'admin' && Request::segment(2) == 'DataVoucher')
                 active @endif"><a class="nav-link" href="{{ route('show.DataVoucher') }}"><i class="far fa-file-alt"></i> <span>Data Voucher</span></a></li>
             <!-- <li class="menu-header">Pages</li>

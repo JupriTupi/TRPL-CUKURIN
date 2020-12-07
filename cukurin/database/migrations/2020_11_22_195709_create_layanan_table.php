@@ -21,7 +21,6 @@ class CreateLayananTable extends Migration
             $table->biginteger('harga');
             $table->string('deskripsi');
             $table->bigint('pembuat');
-
             $table->timestamps();
         });
     }

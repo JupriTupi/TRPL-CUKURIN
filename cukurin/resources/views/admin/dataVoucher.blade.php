@@ -44,12 +44,12 @@
                         <td>{{ $datavoucher->jumlahvoucher}}</td>
                         <td class="text-center">
                             <a href="{{ route('edit.DataVoucher', $datavoucher->id) }}" class="badge badge-info btn-edit"><i class="fas fa-edit"></i></a>
-                            <a href="#" data-id="{{ $datavoucher->id }}" class="badge badge-danger swal-confirm"><i class="fas fa-trash"></i>
+                            <!-- <a href="#" data-id="{{ $datavoucher->id }}" class="badge badge-danger swal-confirm"><i class="fas fa-trash"></i>
                                 <form action="{{ route('destroy.DataVoucher', $datavoucher->id) }}" id="delete{{ $datavoucher->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 </form>
-                            </a>
+                            </a> -->
                         </td>
                     </tr>
                 @endforeach

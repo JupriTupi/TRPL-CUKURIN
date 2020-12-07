@@ -8,9 +8,9 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h4>Data User</h4>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 Tambah Data Pengguna
-            </button>
+            </button> -->
         </div>
         @if (session('success'))
         <div class="card-body">
@@ -43,13 +43,13 @@
                         <td>{{ $user->username }}</td>
                         <td>{{ implode(', ', $user->roles()->get()->pluck('name')->toArray())  }}</td>
                         <td class="text-center">
-                            <a href="{{ route('edit.users-management', $user->id) }}" class="badge badge-info btn-edit"><i class="fas fa-edit"></i></a>
-                            <a href="#" data-id="{{ $user->id }}" class="badge badge-danger swal-confirm"><i class="fas fa-trash"></i>
+                            <a href="{{ route('edit.users-management', $user->id) }}" class="badge badge-info btn-edit"><i class="fas fa-eye"></i></a>
+                            <!-- <a href="#" data-id="{{ $user->id }}" class="badge badge-danger swal-confirm"><i class="fas fa-trash"></i>
                                 <form action="{{ route('destroy.users-management', $user->id) }}" id="delete{{ $user->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 </form>
-                            </a>
+                            </a> -->
                         </td>
                     </tr>
                 @endforeach

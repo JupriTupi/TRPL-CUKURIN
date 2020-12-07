@@ -2,5 +2,5 @@
 
 @section('header', 'Customer')
 @section('content')
-    <h5>Halaman Customer</h5>
+    <h5>Selamat Datang di Halaman Customer</h5>
 @endsection

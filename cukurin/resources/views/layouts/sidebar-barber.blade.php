@@ -12,6 +12,7 @@
             <li class="menu-header">Starter</li>
                 <li class="@if (Request::segment(1) == 'barber' && Request::segment(2) == 'DataLayanan')
                 active @endif"><a class="nav-link" href="{{ route('show.DataLayanan') }}"><i class="far fa-file-alt"></i> <span>Data Layanan</span></a></li>
+                <li class=""><a href="#" class="nav-link"><i class="far fa-envelope"></i><span>Data Pesanan</span></a></li>
             <!-- <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
                 <ul class="dropdown-menu">

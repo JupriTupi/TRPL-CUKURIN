@@ -32,6 +32,13 @@
                         Data tidak boleh kosong, harap diisi.
                     </div>
                 </div>
+                <div class="form-group col-md-6 col-12">
+                    <label>Foto Layanan</label>
+                    <input type="file" class="form-control" name="fotolayanan" value="{{ $datalayanan->fotolayanan }}" required="">
+                    <div class="invalid-feedback">
+                        Data tidak boleh kosong, harap diisi.
+                    </div>
+                </div>
                 <!-- <div class="form-group col-md-6 col-12">
                     <label>Phone</label>
                     <input type="tel" class="form-control" name="noHp" value="{{ $datalayanan->noHp }}">
