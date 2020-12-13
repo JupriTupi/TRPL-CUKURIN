@@ -53,7 +53,7 @@ gtag('config', 'UA-94034622-3');
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="password">New Password</label>
+                                        <label for="password">Password Baru</label>
                                         <input id="password" type="password" class="form-control pwstrength @error('password') is-invalid @enderror" data-indicator="pwindicator" name="password" tabindex="2" required>
                                         <div id="pwindicator" class="pwindicator">
                                             @error('password')
@@ -67,7 +67,7 @@ gtag('config', 'UA-94034622-3');
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="password-confirm">Confirm Password</label>
+                                        <label for="password-confirm">Konfirmasi Password</label>
                                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" tabindex="2" required>
                                     </div>
 

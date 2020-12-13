@@ -3,7 +3,7 @@
 @section('header', 'Edit Profile')
 @section('content')
     <div class="card">
-        <form method="post" action="{{ route('update.users-management', $user) }}" class="needs-validation" novalidate="">
+        <form method="post" action="{{ route('edit.profile.admin', $user) }}" class="needs-validation" novalidate="">
             @csrf
             @method('PATCH')
             <div class="card-header">
@@ -60,6 +60,21 @@
                         </div>
                     </div>
                 </div>
+                <!-- <div class="row">
+                    <div class="form-group col-12">
+                        <label for="status">Status</label>
+                        <select class="form-control" name="status" id="exampleFormControlSelect1">
+                            <option>Pilih Status</option>
+                            <option value="Terverifikasi {{ old('status') == 'Terverifikasi' ? 'selected' : '' }}">Terverifikasi
+                            </option>
+                            <option value="BelumTerverifikasi {{ old('status') == 'BelumTerverifikasi' ? 'selected' : '' }}">
+                                Belum Terverifikasi</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Data tidak boleh kosong, harap diisi.
+                        </div>
+                    </div>
+                </div> -->
                 <a href="{{ route('edit.password.admin') }}" class="text-danger">Ganti Password</a>
             </div>
             <div class="card-footer text-right">

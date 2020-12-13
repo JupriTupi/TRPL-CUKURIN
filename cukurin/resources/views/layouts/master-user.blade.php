@@ -286,6 +286,8 @@ gtag('config', 'UA-94034622-3');
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link"><i class="far fa-clone"></i><span>Barbershop dan Salon</span></a>
+                </li><li class="nav-item">
+                    <a href="{{route('show.DataInformasiCustomer')}}" class="nav-link"><i class="far fa-clone"></i><span>Information</span></a>
                 </li>
                 <!-- <ul class="dropdown-menu">
                     <li class="nav-item"><a href="{{ route('show.DataLayananCustomer') }}" class="nav-link">Potong Rambut</a></li>

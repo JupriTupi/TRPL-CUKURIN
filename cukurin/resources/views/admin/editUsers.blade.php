@@ -58,6 +58,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="form-group col-12">
+                        <label for="status">Status</label>
+                        <select class="form-control" name="status" id="exampleFormControlSelect1">
+                            <option>Pilih Status</option>
+                            <option value="Terverifikasi {{ old('status') == 'Terverifikasi' ? 'selected' : '' }}">Terverifikasi
+                            </option>
+                            <option value="BelumTerverifikasi {{ old('status') == 'BelumTerverifikasi' ? 'selected' : '' }}">
+                                Belum Terverifikasi</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Data tidak boleh kosong, harap diisi.
+                        </div>
+                    </div>
+                </div>
                 <!-- <div class="row">
                     <label for="role" class="d-block mb-3">Role</label>
                     <div class="form-check form-check-inline">

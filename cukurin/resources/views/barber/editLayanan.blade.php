@@ -89,7 +89,8 @@
                 </div> -->
             </div>
             <div class="card-footer text-right">
-            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            <a href="{{ route('show.DataLayanan') }}" class="btn btn-secondary">Batal</a>
             </div>
         </form>
     </div>

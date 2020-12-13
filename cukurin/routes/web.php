@@ -29,6 +29,13 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('DataVoucher/{datavoucher}/edit', 'DataVoucherController@edit')->name('edit.DataVoucher');
     Route::patch('DataVoucher/{datavoucher}', 'DataVoucherController@update')->name('update.DataVoucher');
     Route::delete('DataVoucher/{datavoucher}', 'DataVoucherController@destroy')->name('destroy.DataVoucher');
+    // Data Informasi
+    Route::get('DataInformasi', 'DataInformasiController@show')->name('show.DataInformasi');
+    Route::post('DataInformasi', 'DataInformasiController@store')->name('store.DataInformasi');
+    Route::get('DataInformasi/create', 'DataInformasiController@create')->name('create.DataInformasi');
+    Route::get('DataInformasi/{datainformasi}/edit', 'DataInformasiController@edit')->name('edit.DataInformasi');
+    Route::patch('DataInformasi/{datainformasi}', 'DataInformasiController@update')->name('update.DataInformasi');
+    Route::delete('DataInformasi/{datainformasi}', 'DataInformasiController@destroy')->name('destroy.DataInformasi');
 });
 
 Route::prefix('barber')->middleware('auth')->group(function () {
@@ -53,4 +60,5 @@ Route::prefix('customer')->middleware('auth')->group(function () {
     Route::patch('/editPassword', 'CustomerController@updatePassword')->name('edit.password');
     Route::get('/DataLayananCustomer', 'DataLayananController@datalayanan_customer')->name('show.DataLayananCustomer');
     Route::get('/DataVoucherCustomer', 'DataVoucherController@datavoucher_customer')->name('show.DataVoucherCustomer');
+    Route::get('/DataInformasiCustomer', 'DataInformasiController@datainformasi_customer')->name('show.DataInformasiCustomer');
 });

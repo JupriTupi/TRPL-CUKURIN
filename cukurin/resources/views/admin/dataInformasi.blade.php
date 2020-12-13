@@ -1,15 +1,15 @@
 @extends('layouts.master')
 
-@section('title', 'Data Voucher | Cukurin')
+@section('title', 'Data Informasi | Cukurin')
 @section('header', 'Admin')
 @section('content')
 <div class="section-body">
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h4>Data Voucher</h4>
+            <h4>Data Information</h4>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Tambah Data Voucher dan Coin
+                Tambah Data Information
             </button>
         </div>
         @if (session('success'))
@@ -28,24 +28,24 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Jenis Voucher</th>
-                    <th scope="col">Jumlah Coin</th>
-                    <th scope="col">Jumlah Voucher</th>
+                    <th scope="col">Nomor</th>
+                    <th scope="col">Jenis Informasi</th>
+                    <th scope="col">Judul</th>
+                    <th scope="col">Tanggal Publish</th>
                     <th scope="col" class="text-center">Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($voucher as $no => $datavoucher)
+                @foreach ($artikel as $no => $datainformasi)
                     <tr>
                         <th scope="row">{{ $no+1 }}</th>
-                        <td>{{ $datavoucher->jenisvoucher }}</td>
-                        <td>{{ $datavoucher->jumlahcoin }}</td>
-                        <td>{{ $datavoucher->jumlahvoucher}}</td>
+                        <td>{{ $datainformasi->jenisInformasi }}</td>
+                        <td>{{ $datainformasi->judul }}</td>
+                        <td>{{ date('Y-m-d H:i:s', strtotime($datainformasi->created_at))}}</td>
                         <td class="text-center">
-                            <a href="{{ route('edit.DataVoucher', $datavoucher->id) }}" class="badge badge-info btn-edit"><i class="fas fa-edit">Ubah</i></a>
-                            <!-- <a href="#" data-id="{{ $datavoucher->id }}" class="badge badge-danger swal-confirm"><i class="fas fa-trash"></i>
-                                <form action="{{ route('destroy.DataVoucher', $datavoucher->id) }}" id="delete{{ $datavoucher->id }}" method="POST">
+                            <a href="{{ route('edit.DataInformasi', $datainformasi->id) }}" class="badge badge-info btn-edit"><i class="fas fa-edit">Ubah</i></a>
+                            <!-- <a href="#" data-id="{{ $datainformasi->id }}" class="badge badge-danger swal-confirm"><i class="fas fa-trash"></i>
+                                <form action="{{ route('destroy.DataVoucher', $datainformasi->id) }}" id="delete{{ $datainformasi->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 </form>
@@ -64,40 +64,42 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Tambah Data Voucher</h5>
+                        <h5 class="modal-title">Tambah Data Information</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{ route('show.DataVoucher') }}" method="POST">
+                    <form action="{{ route('show.DataInformasi') }}" method="POST">
                         @csrf
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>
-                                            Jenis Voucher
+                                            Jenis Informasi
                                         </label>
-                                        <input type="text" name="jenisvoucher" value="{{ old('jenisvoucher') }}" class="form-control @error('jenisvoucher') is-invalid @enderror" autocomplete="off">
-                                        @error('jenisvoucher')
+                                        <input type="text" name="jenisInformasi" value="{{ old('jenisInformasi') }}" class="form-control @error('jenisInformasi') is-invalid @enderror" autocomplete="off">
+                                        @error('jenisInformasi')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label>Jumlah Coin</label>
-                                        <input type="text" name="jumlahcoin" value="{{ old('jumlahcoin') }}" class="form-control @error('jumlahcoin') is-invalid @enderror" autocomplete="off">
-                                        @error('jumlahcoin')
+                                        <label>Judul</label>
+                                        <input type="text" name="judul" value="{{ old('judul') }}" class="form-control @error('judul') is-invalid @enderror" autocomplete="off">
+                                        @error('judul')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label>Jumlah Voucher</label>
-                                        <input type="text" name="jumlahvoucher" value="{{ old('jumlahvoucher') }}" class="form-control @error('jumlahvoucher') is-invalid @enderror" autocomplete="off">
-                                        @error('jumlahvoucher')
+                                        <label>Ulasan</label>
+                                        <!-- <input type="textarea" name="ulasan" value="{{ old('ulasan') }}" class="form-control @error('ulasan') is-invalid @enderror" autocomplete="off"> -->
+                                        <textarea class="form-control @error('ulasan') is-invalid @enderror"
+                                                id="ulasan" col="40" name="ulasan">{{ old('ulasan') }}</textarea>
+                                        @error('ulasan')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -179,6 +181,8 @@
 @push('page-scripts')
 <script src="{{ asset('../assets/modules/sweetalert/sweetalert.min.js') }}"></script>
 @endpush
+
+
 
 @push('after-scripts')
 <script>

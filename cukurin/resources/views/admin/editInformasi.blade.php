@@ -1,24 +1,24 @@
 @extends('layouts.master')
 
-@section('header', 'Edit Layanan')
+@section('header', 'Edit Information')
 @section('content')
     <div class="card">
-        <form method="post" action="{{ route('update.DataVoucher', $datavoucher) }}" class="needs-validation" novalidate="">
+        <form method="post" action="{{ route('update.DataInformasi', $datainformasi) }}" class="needs-validation" novalidate="">
             @csrf
             @method('PATCH')
-            <input type="hidden" name="id" value="{{ $datavoucher->id }}">
+            <input type="hidden" name="id" value="{{ $datainformasi->id }}">
             <div class="card-body">
                 <div class="row">                               
                     <div class="form-group col-md-6 col-12">
-                        <label>Jenis Voucher</label>
-                        <input type="text" class="form-control" name="jenisvoucher" value="{{ $datavoucher->jenisvoucher }}" required="">
+                        <label>Jenis Informasi</label>
+                        <input type="text" class="form-control" name="jenisInformasi" value="{{ $datainformasi->jenisInformasi }}" required="">
                         <div class="invalid-feedback">
                             Data tidak boleh kosong, harap diisi.
                         </div>
                     </div>
                     <div class="form-group col-md-6 col-12">
-                        <label>Jumlah Coin</label>
-                        <input type="text" class="form-control" name="jumlahcoin" value="{{ $datavoucher->jumlahcoin }}" required="">
+                        <label>Judul</label>
+                        <input type="text" class="form-control" name="judul" value="{{ $datainformasi->judul }}" required="">
                         <div class="invalid-feedback">
                             Data tidak boleh kosong, harap diisi.
                         </div>
@@ -26,15 +26,15 @@
                 </div>
                 <div class="row">
                 <div class="form-group col-md-6 col-12">
-                    <label>Jumlah Voucher</label>
-                    <input type="text" class="form-control" name="jumlahvoucher" value="{{ $datavoucher->jumlahvoucher }}" required="">
+                    <label>Ulasan</label>
+                    <input type="text" class="form-control" name="ulasan" value="{{ $datainformasi->ulasan }}" required="">
                     <div class="invalid-feedback">
                         Data tidak boleh kosong, harap diisi.
                     </div>
                 </div>
                 <!-- <div class="form-group col-md-6 col-12">
                     <label>Phone</label>
-                    <input type="tel" class="form-control" name="noHp" value="{{ $datavoucher->noHp }}">
+                    <input type="tel" class="form-control" name="noHp" value="{{ $datainformasi->noHp }}">
                     <div class="invalid-feedback">
                         Data tidak boleh kosong, harap diisi.
                     </div>
@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="form-group col-12">
                         <label>Alamat</label>
-                        <textarea name="alamat" class="form-control summernote-simple">{{ $datavoucher->alamat }}</textarea>
+                        <textarea name="alamat" class="form-control summernote-simple">{{ $datainformasi->alamat }}</textarea>
                         <div class="invalid-feedback">
                             Data tidak boleh kosong, harap diisi.
                         </div>
@@ -52,7 +52,7 @@
                 <div class="row">
                     <div class="form-group col-12">
                         <label>Tentang</label>
-                        <textarea name="tentang" class="form-control summernote-simple">{{ $datavoucher->tentang }}</textarea>
+                        <textarea name="tentang" class="form-control summernote-simple">{{ $datainformasi->tentang }}</textarea>
                         <div class="invalid-feedback">
                             Data tidak boleh kosong, harap diisi.
                         </div>
@@ -83,7 +83,7 @@
             </div>
             <div class="card-footer text-right">
             <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="{{ route('show.DataVoucher') }}" class="btn btn-secondary">Batal</a>
+            <a href="{{ route('show.DataInformasi') }}" class="btn btn-secondary">Batal</a>
             </div>
         </form>
     </div>

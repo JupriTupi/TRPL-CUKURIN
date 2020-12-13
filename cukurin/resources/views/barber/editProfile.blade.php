@@ -42,14 +42,23 @@
                     </div>
                     </div>
                     <div class="row">
-                    <div class="form-group col-12">
-                        <label>Alamat</label>
-                        <textarea name="alamat" class="form-control summernote-simple">{{ $user->alamat }}</textarea>
-                        <div class="invalid-feedback">
-                            Data tidak boleh kosong, harap diisi
+                        <div class="form-group col-12">
+                            <label>Alamat</label>
+                            <textarea name="alamat" class="form-control summernote-simple">{{ $user->alamat }}</textarea>
+                            <div class="invalid-feedback">
+                                Data tidak boleh kosong, harap diisi
+                            </div>
                         </div>
                     </div>
+                    <div class="row">
+                    <div class="form-group col-12">
+                        <label>Tentang</label>
+                        <textarea name="tentang" class="form-control summernote-simple">{{ $user->tentang }}</textarea>
+                        <div class="invalid-feedback">
+                            Data tidak boleh kosong, harap diisi.
+                        </div>
                     </div>
+                </div>
                     <a href="{{ route('edit.password.barber') }}" class="text-danger">Ganti Password</a>
                 </div>
                 <div class="card-footer text-right">

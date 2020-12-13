@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->text('alamat');
             $table->text('tentang')->nullable();
             $table->string('password');
+            $table->enum('status',['BelumTerverifikasi','Terverifikasi']);
             $table->unsignedBigInteger('id_role');
             $table->rememberToken();
             $table->timestamps();

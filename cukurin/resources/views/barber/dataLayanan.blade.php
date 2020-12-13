@@ -45,7 +45,7 @@
                         <td>{{ $datalayanan->harga }}</td>
                         <td>{{ $datalayanan->deskripsi}}</td>
                         <td class="text-center">
-                            <a href="{{ route('edit.DataLayanan', $datalayanan->id) }}" class="badge badge-info btn-edit"><i class="fas fa-edit"></i></a>
+                            <a href="{{ route('edit.DataLayanan', $datalayanan->id) }}" class="badge badge-info btn-edit"><i class="fas fa-edit">Ubah</i></a>
                             <!-- <a href="#" data-id="{{ $datalayanan->id }}" class="badge badge-danger swal-confirm"><i class="fas fa-trash"></i>
                                 <form action="{{ route('destroy.DataLayanan', $datalayanan->id) }}" id="delete{{ $datalayanan->id }}" method="POST">
                                 @csrf
@@ -179,7 +179,7 @@
                             </div>
                         </div>
                         <div class="modal-footer bg-whitesmoke br">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>

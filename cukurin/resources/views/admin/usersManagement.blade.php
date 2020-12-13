@@ -32,6 +32,7 @@
                     <th scope="col">Nama</th>
                     <th scope="col">Username</th>
                     <th scope="col">Roles</th>
+                    <th scope="col">Status</th>
                     <th scope="col" class="text-center">Action</th>
                 </tr>
                 </thead>
@@ -42,6 +43,7 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->username }}</td>
                         <td>{{ implode(', ', $user->roles()->get()->pluck('name')->toArray())  }}</td>
+                        <td>{{ $user->status }}</td>
                         <td class="text-center">
                             <a href="{{ route('edit.users-management', $user->id) }}" class="badge badge-info btn-edit"><i class="fas fa-eye"></i></a>
                             <!-- <a href="#" data-id="{{ $user->id }}" class="badge badge-danger swal-confirm"><i class="fas fa-trash"></i>

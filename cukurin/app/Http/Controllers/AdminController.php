@@ -61,6 +61,7 @@ class AdminController extends Controller
             'noHp' => $request->noHp,
             'alamat' => $request->alamat,
             'tentang'=> $request->tentang,
+            'status' => $request->status,
             // 'id_role' => $request->role,
         ]);
 
@@ -77,12 +78,12 @@ class AdminController extends Controller
     {
         request()->validate(
             [
-                'username' => ['required', 'alpha_num', 'max:25'],
+                'username' => ['required', 'alpha_num', 'max:30'],
                 'noHp' => ['required', 'string', 'max:13', 'min:10'],
                 'alamat' => ['required'],
-                'name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'name' => ['required', 'string', 'max:30'],
+                'email' => ['required', 'string', 'email', 'max:30', 'unique:users'],
+                'password' => ['required', 'string', 'min:8','max:10', 'confirmed'],
                 'tentang' => ['required'],
                 'role' => ['required']
             ],
@@ -95,10 +96,11 @@ class AdminController extends Controller
                 'email.required' => 'Data tidak boleh kosong, harap diisi',
                 'password.required' => 'Data tidak boleh kosong, harap diisi',
                 'password.min' => 'Minimal 8 karakter',
+                'password.max' => 'Minimal 10 karakter',
                 'password.confirmed' => 'Masukkan konfirmasi password yang valid',
                 'email.email' => 'Masukkan Email yang valid.',
                 'email.unique' => 'Email sudah digunakan, silakan ganti.',
-                'username.max' => 'Maksimal 25 karakter',
+                'username.max' => 'Maksimal 30 karakter',
                 'username.alpha_num' => 'Hanya bisa diisi dengan karakter alpha numeric',
                 'tentang.required' => 'Data tidak boleh kosong, harap diisi',
                 'role.required' => 'Data tidak boleh kosong, harap diisi',
@@ -113,8 +115,10 @@ class AdminController extends Controller
             'password' => bcrypt($request->input('password')),
             'tentang'=> $request->input('tentang'),
             'id_role' => $request->input('role'),
+            'status' => $request->input('status'),
         ]);
         // return $user;
+        $user->status()->attach(User::where('name', 'BelumTerverifikasi')->first());
 
         return redirect()->route('show.users-management')->with('success', 'Data Berhasil Ditambahkan.');
     }
@@ -155,11 +159,11 @@ class AdminController extends Controller
     private function _userValidation(Request $request)
     {
         $validation = $request->validate([
-            'username' => ['required', 'alpha_num', 'max:25'],
+            'username' => ['required', 'alpha_num', 'max:30'],
             'noHp' => ['required', 'string', 'max:13', 'min:10'],
             'alamat' => ['required'],
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
+            'name' => ['required', 'string', 'max:30'],
+            'email' => ['required', 'string', 'email', 'max:30'],
         ]);
     }
 }

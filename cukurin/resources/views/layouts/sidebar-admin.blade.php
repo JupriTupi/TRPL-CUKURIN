@@ -13,7 +13,9 @@
                 <li class="@if (Request::segment(1) == 'admin' && Request::segment(2) == 'users-management')
                 active @endif"><a class="nav-link" href="{{ route('show.users-management') }}"><i class="far fa-user"></i> <span>Data User</span></a></li>
                 <li class="@if (Request::segment(1) == 'admin' && Request::segment(2) == 'DataVoucher')
-                active @endif"><a class="nav-link" href="{{ route('show.DataVoucher') }}"><i class="far fa-file-alt"></i> <span>Data Voucher</span></a></li>
+                active @endif"><a class="nav-link" href="{{ route('show.DataVoucher') }}"><i class="far fa-file-alt"></i> <span>Data Voucher dan Coin</span></a></li>
+                <li class="@if (Request::segment(1) == 'admin' && Request::segment(2) == 'DataInformasi')
+                active @endif"><a class="nav-link" href="{{ route('show.DataInformasi') }}"><i class="far fa-file-alt"></i> <span>Information</span></a></li>
             <!-- <li class="menu-header">Pages</li>
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Auth</span></a>
