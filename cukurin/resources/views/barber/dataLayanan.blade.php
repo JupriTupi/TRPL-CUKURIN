@@ -28,7 +28,7 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Nomor</th>
                     <th scope="col">Foto Layanan</th>
                     <th scope="col">Nama Layanan</th>
                     <th scope="col">Harga</th>
@@ -37,7 +37,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($layanan as $no => $datalayanan)
+                @foreach ($datalayanan as $no => $datalayanan)
                     <tr>
                         <th scope="row">{{ $no+1 }}</th>
                         <td><img src="{{$datalayanan->getphoto()}}" alt="" style='width: 60px;'></td>

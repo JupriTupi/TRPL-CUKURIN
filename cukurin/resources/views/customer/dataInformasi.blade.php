@@ -8,9 +8,10 @@
       <div class="col-12 col-md-4 col-lg-4" style="padding:30px;">
         <article class="article article-style-c" style="csolid #dedede;text-align:center;">
           <div class="product-details">
-            <h3 class="text-center">{{$if->judul}}</a></h3>
+            <h3 class="text-center"><a href="">{{$if->judul}}</a></h3>
             <h5 class="text-center">Jenis Informasi :{{$if->jenisInformasi}}</h5>
-            <h6 class="text-center">{{$if->ulasan}}</h6>
+            <h6 class="text-center">Diunggah pada : {{ date('Y-m-d H:i:s', strtotime($if->created_at))}}</h6>
+            <p class="text-center">{!! Str::limit (nl2br($if->ulasan),100) !!}</p>
             <!-- <div class="add-to-cart mb-20" >
               <a href="{{url(''.$if->id)}}"><i class="btn btn-success">Tukarkan</i></a>
             </div> -->

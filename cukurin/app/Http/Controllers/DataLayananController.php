@@ -44,15 +44,17 @@ class DataLayananController extends Controller
     {   $user = \Auth::user()->id;
         request()->validate(
             [
-                'namalayanan' => ['required', 'string', 'max:255'],
-                'harga' => ['required', 'numeric', 'max:100000', 'min:20000'],
+                'namalayanan' => ['required', 'string', 'max:30'],
+                'harga' => ['required', 'numeric', 'max:9999999999', 'min:20000'],
                 'deskripsi' => ['required','string'],
             ],
             [
-                'namalayanan.string' => 'Nama Lengkap Harus berupa huruf',
+                'namalayanan.string' => 'Nama Layanan Harus berupa huruf',
                 'namalayanan.required' => 'Data tidak boleh kosong, harap diisi',
+                'namalayanan.max' => 'Nama Layanan Maksimal 30 karakter',
                 'harga.numeric' => 'Harga Harus Berupa Angka',
                 'harga.required' => 'Data tidak boleh kosong, harap diisi',
+                'harga.max' => 'Harga Maksimal 10 digit',
                 'deskripsi.required' => 'Data tidak boleh kosong, harap diisi',
                 'deskripsi.string' => 'Deskripsi Harus Berupa Huruf'
             ]
@@ -77,9 +79,8 @@ class DataLayananController extends Controller
      */
     public function showDataLayanan(DataLayanan $datalayanan)
     {
-        return view('barber.dataLayanan', [
-            'layanan' => DataLayanan::all(),
-        ]);
+        $datalayanan = DataLayanan::where('pembuat', Auth::user()->id)->get();
+        return view('barber.dataLayanan', compact('datalayanan'));
     }
 
     /**
@@ -127,15 +128,17 @@ class DataLayananController extends Controller
     private function _layananValidation(Request $request)
     {
         $validation = $request->validate([
-            'namalayanan' => ['required', 'string', 'max:255'],
-            'harga' => ['required', 'numeric', 'max:100000', 'min:20000'],
+            'namalayanan' => ['required', 'string', 'max:30'],
+            'harga' => ['required', 'numeric', 'max:9999999999', 'min:20000'],
             'deskripsi' => ['required','string'],
         ],
         [
             'namalayanan.string' => 'Nama Lengkap Harus berupa huruf',
             'namalayanan.required' => 'Data tidak boleh kosong, harap diisi',
+            'namalayanan.max' => 'Nama Layanan Maksimal 30 karakter',
             'harga.numeric' => 'Harga Harus Berupa Angka',
             'harga.required' => 'Data tidak boleh kosong, harap diisi',
+            'harga.max' => 'Harga Maksimal 10 digit',
             'deskripsi.required' => 'Data tidak boleh kosong, harap diisi',
             'deskripsi.string' => 'Deskripsi Harus Berupa Huruf'
         ]);

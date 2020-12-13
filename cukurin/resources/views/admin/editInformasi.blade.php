@@ -27,7 +27,7 @@
                 <div class="row">
                 <div class="form-group col-md-6 col-12">
                     <label>Ulasan</label>
-                    <input type="text" class="form-control" name="ulasan" value="{{ $datainformasi->ulasan }}" required="">
+                    <textarea class="form-control @error('ulasan') is-invalid @enderror" id="ulasan" col="40" name="ulasan">{{ $datainformasi->ulasan }}</textarea>
                     <div class="invalid-feedback">
                         Data tidak boleh kosong, harap diisi.
                     </div>

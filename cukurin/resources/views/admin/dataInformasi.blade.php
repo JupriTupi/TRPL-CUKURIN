@@ -97,8 +97,7 @@
                                     <div class="form-group">
                                         <label>Ulasan</label>
                                         <!-- <input type="textarea" name="ulasan" value="{{ old('ulasan') }}" class="form-control @error('ulasan') is-invalid @enderror" autocomplete="off"> -->
-                                        <textarea class="form-control @error('ulasan') is-invalid @enderror"
-                                                id="ulasan" col="40" name="ulasan">{{ old('ulasan') }}</textarea>
+                                        <textarea class="form-control @error('ulasan') is-invalid @enderror" id="ulasan" col="40" name="ulasan">{{ old('ulasan') }}</textarea>
                                         @error('ulasan')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
