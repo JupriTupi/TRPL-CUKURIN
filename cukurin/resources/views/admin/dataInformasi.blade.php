@@ -40,7 +40,7 @@
                     <tr>
                         <th scope="row">{{ $no+1 }}</th>
                         <td>{{ $datainformasi->jenisInformasi }}</td>
-                        <td>{{ $datainformasi->judul }}</td>
+                        <td><a href="{{ route('edit.DataInformasi', $datainformasi->id) }}">{{ $datainformasi->judul }}</a></td>
                         <td>{{ date('Y-m-d H:i:s', strtotime($datainformasi->created_at))}}</td>
                         <td class="text-center">
                             <a href="{{ route('edit.DataInformasi', $datainformasi->id) }}" class="badge badge-info btn-edit"><i class="fas fa-edit">Ubah</i></a>
