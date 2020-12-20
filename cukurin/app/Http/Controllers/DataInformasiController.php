@@ -136,4 +136,13 @@ class DataInformasiController extends Controller
         // return $datalayanan;
         return view('customer.dataInformasi', compact('datainformasi'));
       }
+    public function detaildatainformasi_customer (){
+        $datainformasi = \App\DataInformasi::all();
+        // $user = \App\User::where('id_role','=',2)->first();
+        // $datalayanan= DB::table('layanan as ly')
+        // ->join('users as us', 'us.id', '=', 'ly.pembuat')
+        // ->select(DB::raw('ly.id as id,ly.namalayanan as namalayanan,ly.fotolayanan as fotolayanan,ly.harga as harga,ly.deskripsi as deskripsi,us.name as pembuat'))->get();
+        // return $datalayanan;
+        return view('customer.detailDataInformasi', compact('datainformasi'));
+      }
 }

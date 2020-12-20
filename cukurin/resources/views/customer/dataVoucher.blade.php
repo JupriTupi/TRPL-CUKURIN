@@ -12,7 +12,7 @@
             <h5 class="text-center">Potongan {{$vc->jumlahvoucher}}</h5>
             <h6 class="text-center">Harga : {{$vc->jumlahcoin}} Coin</h6>
             <div class="add-to-cart mb-20" >
-              <a href="{{url(''.$vc->id)}}"><i class="btn btn-success">Tukarkan</i></a>
+              <a href="{{url(''.$vc->id)}}" class="btn btn-primary">Tukarkan</a>
             </div>
           </div>
         </article>

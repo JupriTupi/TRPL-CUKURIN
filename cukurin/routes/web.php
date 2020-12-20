@@ -61,4 +61,5 @@ Route::prefix('customer')->middleware('auth')->group(function () {
     Route::get('/DataLayananCustomer', 'DataLayananController@datalayanan_customer')->name('show.DataLayananCustomer');
     Route::get('/DataVoucherCustomer', 'DataVoucherController@datavoucher_customer')->name('show.DataVoucherCustomer');
     Route::get('/DataInformasiCustomer', 'DataInformasiController@datainformasi_customer')->name('show.DataInformasiCustomer');
+    Route::get('/DetailDataInformasiCustomer', 'DataInformasiController@detaildatainformasi_customer')->name('show.DetailDataInformasiCustomer');
 });

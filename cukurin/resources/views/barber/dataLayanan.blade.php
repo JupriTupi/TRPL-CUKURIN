@@ -99,7 +99,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label>Harga</label>
+                                        <label>Harga (Rp)</label>
                                         <input type="text" name="harga" value="{{ old('harga') }}" class="form-control @error('harga') is-invalid @enderror" autocomplete="off">
                                         @error('harga')
                                             <span class="invalid-feedback" role="alert">
